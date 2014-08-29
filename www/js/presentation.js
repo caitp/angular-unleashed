@@ -15,7 +15,7 @@
     touch: true,
     loop: false,
     rtl: false,
-    fragments: false,
+    fragments: true,
     embedded: false,
     autoSlide: 0,
     autoSlideStoppable: true,

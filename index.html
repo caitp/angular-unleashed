@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <base href="/index.html">
+        <script>
+        var head = document.getElementsByTagName('head')[0];
+        var base = document.createElement('base');
+        if (window.location.host.match(/github\.io\/angular-semantic/))
+            base.href = '/angular-semantic/index.html';
+        else
+            base.href = '/index.html';
+            head.insertBefore(base, head.firstChild);
+        </script>
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="author" content="Caitlin Potter">

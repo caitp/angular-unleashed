@@ -1,0 +1,28 @@
+.slides > .footer {
+  position: absolute;
+  top: 500px;
+  left: -500px;
+  width: 100%;
+  text-align: center;
+  color: #888;
+}
+
+.slides > .footer a {
+  color: #ccc!important;
+}
+
+.slides > .footer a:hover {
+  color: #eee!important;
+}
+
+section > section > .background {
+  background-image: url(/assets/angular_logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+  height: 500px;
+  width:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

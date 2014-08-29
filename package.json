@@ -1,0 +1,20 @@
+{
+  "name": "angular-unleashed",
+  "version": "0.0.0",
+  "description": "A slideshow about Angular things...",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caitp/angular-unleashed"
+  },
+  "author": "Caitlin Potter <caitpotter88@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/caitp/angular-unleashed/issues"
+  },
+  "homepage": "https://github.com/caitp/angular-unleashed",
+  "dependencies": {
+    "gulp": "^3.8.7",
+    "gulp-connect": "^2.0.6"
+  }
+}

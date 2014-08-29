@@ -1,4 +1,10 @@
 (function AngularUnleashedPresentation(global, Reveal) {
+  var slice = Array.prototype.slice;
+  slice.call(document.querySelectorAll('.reveal > .slides > section > section'), 0).forEach(function(node) {
+    var background = document.createElement('div');
+    background.className = 'background';
+    node.insertBefore(background, node.firstChild);
+  });
   Reveal.initialize({
     controls: false,
     progress: false,

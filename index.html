@@ -80,26 +80,17 @@
                     <section>
                         <h1>Performance</h1>
                         <p>Benchmarks! largetable (1000rows, 20columns interpolated)</p>
+                        <p class="fragment">~35% improved init time (vs v1.2.23)
+                        <p class="fragment">5x faster on update (vs v1.2.23)
+                        <p class="fragment">Significant (300%) less memory.
+                    </section>
+
+                    <section>
+                        <h1>Performance</h1>
                         <table>
-                            <tr>
-                                <th>Version</th>
-                                <th>Initialization (ms)</th>
-                                <th>Update (ms)</th>
-                            </tr>
-                            <tr class="fragment">
-                                <th>v1.2.23</th>
-                                <td>1300-1800ms
-                                <td>30-60ms
-                            </tr>
-                            <tr class="fragment">
-                                <th>v1.3.0-beta.19</th>
-                                <td>800-1200ms
-                                <td>10ms
-                            </tr>
+                            <tr><th>v1.2.23</th><th>v1.3.0-beta.19</th></tr>
+                            <tr><td><img src="assets/v1.2.23.png"></td><td><img src="assets/v1.3.0-beta.19.png"></td></tr>
                         </table>
-                        <p class="fragment">~35% improvement in init times on average
-                        <p class="fragment">~75% improvement in update times on average
-                        <p class="fragment">Faster, Less memory
                     </section>
                 </section>
 

@@ -5,6 +5,7 @@
   width: 100%;
   text-align: center;
   color: #888;
+  z-index: 999;
 }
 
 .slides > .footer a {

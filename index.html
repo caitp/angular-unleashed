@@ -57,6 +57,49 @@
                 <section>
                     <!-- Performance Tuning -->
                     <section>
+                        <h1>Performance</h1>
+                        <p class="fragment">Bottlenecks:</p>
+                        <ul>
+                            <li class="fragment">Dirty-checking / Scope Events
+                            <li class="fragment">DOM manipulation causing reflows
+                            <li class="fragment">Initial compilation of markup
+                            <li class="fragment">$interpolate, $parse, jqLite, directives...
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h1>Performance</h1>
+                        <p>Scopes have been enhanced in a few ways</p>
+                        <ul>
+                            <li class="fragment">New ::bind-once expressions
+                            <li class="fragment">Under the hood improvements to core algorithms
+                            <li class="fragment">Shrink the data-set and spend less time churning when $digest is called.
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h1>Performance</h1>
+                        <p>Benchmarks! largetable (1000rows, 20columns interpolated)</p>
+                        <table>
+                            <tr>
+                                <th>Version</th>
+                                <th>Initialization (ms)</th>
+                                <th>Update (ms)</th>
+                            </tr>
+                            <tr class="fragment">
+                                <th>v1.2.23</th>
+                                <td>1300-1800ms
+                                <td>30-60ms
+                            </tr>
+                            <tr class="fragment">
+                                <th>v1.3.0-beta.19</th>
+                                <td>800-1200ms
+                                <td>10ms
+                            </tr>
+                        </table>
+                        <p class="fragment">~35% improvement in init times on average
+                        <p class="fragment">~75% improvement in update times on average
+                        <p class="fragment">Faster, Less memory
                     </section>
                 </section>
 

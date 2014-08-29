@@ -6,7 +6,7 @@ The plan is to show off:
 
 1. The performance enhancements which Igor has tirelessly worked at, as well as the tools we've provided for improving performance in AngularJS applications.
 2. The new features and long-awaited bugfixes. Some of these exist!
-3. The developer tooling and support, particularly those built by the 2014 summer interns @ealtenho and @caguillen214
+3. The developer tooling and support, particularly those built by the 2014 summer interns [**@ealtenho**](https://github.com/ealtenho) and [**@caguillen214**](https://github.com/caguillen214)
 
 It's hard to sell this stuff, it's hard to get people excited, but dangit I hope to provide some cool demos which show just how hard we've worked at improving the developer experience with AngularJS.
 

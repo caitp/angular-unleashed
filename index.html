@@ -19,13 +19,13 @@
             head.insertBefore(base, head.firstChild);
         function addCss(path) {
             var link = document/createElement('link');
-            link.href = path;
+            link.setAttribute('href', path);
             link.type = 'text/css';
             head.appendChild(link);
         }
         function addScript(path) {
             var script = document.createElement('script');
-            script.src = path;
+            script.setAttribute('src', path);
             head.appendChild(script);
         }
         addScript('/third_party/reveal.js/js/reveal.js');

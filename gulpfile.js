@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
+var ghpages = require('gulp-gh-pages');
 
 gulp.task('serve', function() {
   connect.server({
@@ -40,6 +41,11 @@ gulp.task('open', function(done) {
   function callback(error, stdout, stderr) {
     if (error) process.stdout.write('error: ' + error);
   }
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('www/**/*').
+    pipe(ghpages());
 });
 
 gulp.task('default', ['serve', 'watch', 'open']);

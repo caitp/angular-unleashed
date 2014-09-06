@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="svgApp">
+    <head>
+        <script>
+        var head = document.getElementsByTagName('head')[0];
+        document.write('<base href="' + (/github\.io\/angular-unleashed/.test(window.location.href) ?
+                        '/angular-unleashed/svg.html' :
+                        '/svg.html') + '">');
+        </script>
+        <link rel="stylesheet" href="css/svg-demo.css">
+        <script src="js/angular.js"></script>
+        <script src="js/svgApp.js"></script>
+    </head>
+    <body>
+        <not-an-svg>
+            <swiggle n-path="swiggle.path"
+                     ng-attr-fill="{{swiggle.fill}}"
+                     ng-attr-stroke="{{swiggle.stroke}}"
+                     ng-attr-stroke-width="{{swiggle.strokeWidth}}"></swiggle>
+        </not-an-svg>
+        <input type="color" ng-model="swiggle.fill" />
+        <input type="color" ng-model="swiggle.stroke" />
+        <input type="range" ng-model="swiggle.strokeWidth" />
+        <input type="number" ng-model="swiggle.newPoint.x" />
+        <input type="number" ng-model="swiggle.newPoint.y" />
+        <select ng-model="swiggle.newPoint.type" ng-options="type for type in types"></select>
+        <button ng-click="addPoint()">+</button>
+    </body>
+</html>
+

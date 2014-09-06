@@ -117,12 +117,12 @@
                     <section>
                         <h2>One-time binding</h2>
                         <pre>
-                            <code class="html">
-                <div ng-repeat="row in rows" class="row">
-                    <div ng-repeat="col in row" class="col">
-                        Column {{$parent.$index}}x{{$index}}
-                    </div>
-                </div>
+                            <code class="html" style="font-size: 18pt;">
+    <div ng-repeat="row in rows" class="row">
+        <div ng-repeat="col in row" class="col">
+            Column {{$parent.$index}}x{{$index}}
+        </div>
+    </div>
                             </code>
                         </pre>
                         <p class="fragment">Dirty checking watches for:</p>
@@ -131,7 +131,26 @@
                             <li class="fragment">Changes to each individual "row" collection
                             <li class="fragment">Changes to each individual column value
                         </ul><br>
-                        <strong class="fragment">**SLOW**
+                        <strong class="fragment">**SLOW**</strong>
+                    </section>
+
+                    <section>
+                        <h2>One-time binding</h2>
+                        <pre>
+                            <code class="html" style="font-size: 18pt;">
+    // Bind-once with "::"-prefix:
+    <div ng-repeat="row in ::rows" class="row">
+        <div ng-repeat="col in ::row" class="col">
+            Column {{::$parent.$index}}x{{::$index}}
+        </div>
+    </div>
+                            </code>
+                        </pre>
+                        <ul>
+                            <li class="fragment">Stop watching expression once value is defined.
+                            <li class="fragment">Significant load off of change detectors back
+                            <li class="fragment">Spend more time doing interesting things
+                        </ul>
                     </section>
                 </section>
 

@@ -15,7 +15,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
+        <script src="third_party/reveal.js/lib/js/head.min.js"></script>
         <script src="third_party/reveal.js/js/reveal.js"></script>
         <link rel="stylesheet" href="third_party/reveal.js/css/reveal.css">
         <link rel="stylesheet" href="third_party/reveal.js/css/theme/default.css">
@@ -103,6 +103,28 @@
                 <section>
                     <!-- New features -->
                     <section>
+                        <h1>New Features</h1>
+                        <ul>
+                            <li class="fragment">One-time binding
+                            <li class="fragment">More modern Promise implementation
+                            <li class="fragment">Support for input[type=date]
+                            <li class="fragment">Asynchonous validators
+                            <li class="fragment">SVG as a first-class citizen
+                            <li class="fragment">Long-awaited support for jQuery 2.x
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>One-time binding</h2>
+                        <pre>
+                            <code class="html">
+                <div ng-repeat="row in rows" class="row">
+                    <div ng-repeat="col in row" class="col">
+                        Column {{$parent.$index}}x{{$index}}
+                    </div>
+                </div>
+                            </code>
+                        </pre>
                     </section>
                 </section>
 

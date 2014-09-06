@@ -27,3 +27,13 @@ section > section > .background {
   top: 100px;
   left: 0;
 }
+
+.reveal pre {
+  border-radius: 1em;
+  background-color: #3F3F3F;
+  opacity: .6;
+}
+
+.reveal pre code {
+  background: none;
+}

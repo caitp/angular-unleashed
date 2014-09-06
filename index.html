@@ -15,7 +15,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
+        <script src="third_party/reveal.js/lib/js/head.min.js"></script>
         <script src="third_party/reveal.js/js/reveal.js"></script>
         <link rel="stylesheet" href="third_party/reveal.js/css/reveal.css">
         <link rel="stylesheet" href="third_party/reveal.js/css/theme/default.css">
@@ -115,7 +115,47 @@
                     </section>
 
                     <section>
-                        
+                        <h2>One-time binding</h2>
+                        <pre>
+                            <code class="html" style="font-size: 18pt;">
+    <div ng-repeat="row in rows" class="row">
+        <div ng-repeat="col in row" class="col">
+            Column {{$parent.$index}}x{{$index}}
+        </div>
+    </div>
+                            </code>
+                        </pre>
+                        <p class="fragment">Dirty checking watches for:</p>
+                        <ul>
+                            <li class="fragment">Changes to "rows" collection as a whole
+                            <li class="fragment">Changes to each individual "row" collection
+                            <li class="fragment">Changes to each individual column value
+                        </ul><br>
+                        <strong class="fragment">**SLOW**</strong>
+                    </section>
+
+                    <section>
+                        <h2>One-time binding</h2>
+                        <pre>
+                            <code class="html" style="font-size: 18pt;">
+    // Bind-once with "::"-prefix:
+    <div ng-repeat="row in ::rows" class="row">
+        <div ng-repeat="col in ::row" class="col">
+            Column {{::$parent.$index}}x{{::$index}}
+        </div>
+    </div>
+                            </code>
+                        </pre>
+                        <ul>
+                            <li class="fragment">Stop watching expression once value is defined.
+                            <li class="fragment">Significant load off of change detectors back
+                            <li class="fragment">Spend more time doing interesting things
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>SVG-tastic apps</h2>
+                        <iframe src="svg.html" scrolling="no"></iframe>
                     </section>
                 </section>
 

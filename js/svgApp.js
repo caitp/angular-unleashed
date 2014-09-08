@@ -56,7 +56,11 @@ angular.module("svgApp", []).
         };
     }).
     run(function($rootScope) {
-        $rootScope.swiggle = {};
+        $rootScope.swiggle = {
+            stroke: '#fff',
+            fill: '#fff',
+            strokeWidth: '1'
+        };
         $rootScope.addPoint = function() {
             $rootScope.swiggle = $rootScope.swiggle || {};
             $rootScope.swiggle.path = $rootScope.swiggle.path || [];

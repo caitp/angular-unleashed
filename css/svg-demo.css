@@ -11,3 +11,8 @@ svg|svg {
     min-height: 80%;
     min-width: 100%;
 }
+
+input[type=color] {
+    border: none;
+    background: none;
+}

@@ -30,11 +30,11 @@
     parallaxBackgroundSize: '',
     dependencies: [
       {
-        src: '/third_party/reveal.js/lib/js/classList.js',
+        src: 'third_party/reveal.js/lib/js/classList.js',
         condition: function() { return !document.body.classList; }
       },   
       {
-        src: '/third_party/reveal.js/plugin/highlight/highlight.js',
+        src: 'third_party/reveal.js/plugin/highlight/highlight.js',
         async: true,
         callback: function() { hljs.initHighlightingOnLoad(); }
       }

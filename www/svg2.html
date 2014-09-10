@@ -19,9 +19,11 @@
                      ng-attr-stroke="{{::art.mixFill($index)}}"
                      ng-attr-stroke-width="{{art.strokeWidth}}"></swiggle>
         </not-an-svg>
-        <label>nodes<input type="range" ng-model="art.nodes" min="1" max="12"></label>
-        <label>strokeWidth<input type="range" ng-model="art.strokeWidth" min="0" max="15" step="0.25"></label>
-        <label>radius<input type="range" ng-model="art.radius" min="0" max="200" step="0.25"></label>
+        <div style="width: 90%; margin: 0 auto; padding: .25em; vertical-align: middle">
+            <label>nodes</label><input type="range" ng-model="art.nodes" min="1" max="12">
+            <label>strokeWidth</label><input type="range" ng-model="art.strokeWidth" min="0" max="15" step="0.25">
+            <label>radius</label><input type="range" ng-model="art.radius" min="0" max="200" step="0.25">
+        </div>
     </body>
 </html>
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="formsApp">
+    <head>
+        <script>
+        var head = document.getElementsByTagName('head')[0];
+        document.write('<base href="' + (/github\.io\/angular-unleashed/.test(window.location.href) ?
+                        '/angular-unleashed/forms.html' :
+                        '/forms.html') + '">');
+        </script>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-messages.js"></script>
+        <script src="js/formsApp.js"></script>
+        <link rel="stylesheet" href="css/forms-demo.css">
+    </head>
+    <body ng-controller="formCtrl as form">
+        <form name="form.signup" novalidate ng-model-options="{ updateOn: 'blur' }">
+            <h1 style="color: #ddd">Signup</h1>
+            <!-- Name -->
+            <div class="field name-field">
+                <input class="input" type="text" name="name" ng-model="form.name" name="name" ng-minlength="6" required placeholder="Name">
+                <div ng-if="form.signup.name.$error && form.signup.name.$touched" ng-messages="form.signup.name.$error" class="errors">
+                    <div ng-message="required">You did not enter your name</div>
+                    <div ng-message="minlength">Name must be at least 6 characters</div>
+                </div>
+            </div>
+            <!-- Email -->
+            <div class="field email-field" ng-class="{loading:form.signup.email.$pending}">
+                <input type="email" name="email" ng-model="form.email" placeholder="Email Address" class="input" required verify-email>
+                <div ng-if="form.signup.email.$error && form.signup.email.$touched" ng-messages="form.signup.email.$error" class="errors">
+                    <div ng-message="required">You did not enter your email address</div>
+                    <div ng-message="email">Must contain a valid email address</div>
+                    <div ng-message="email-in-use">Email is in use</div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
+

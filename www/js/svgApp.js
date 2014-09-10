@@ -122,8 +122,9 @@ angular.module("svgApp", []).
 
       this.makePath = function(index, count) {
         var svg = getSvgRoot();
-        var w = svg.offsetWidth;
-        var h = svg.offsetHeight;
+        var rect = svg.getBoundingClientRect && svg.getBoundingClientRect();
+        var w = svg.offsetWidth || rect.width;
+        var h = svg.offsetHeight || rect.height;
         var mx = w / 2;
         var my = h / 2;
         var deg = TO_RADIANS((360 / count) * (index+1) + counter);

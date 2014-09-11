@@ -156,6 +156,66 @@
 
                     <section>
                         <h2>New form coolness</h2>
+                        <p>Asynchronous validators</p>
+                        <pre>
+                            <code class="js" style="font-size: 18pt;">
+    ngModel.$asyncValidators.custom =
+        function(modelValue, viewValue) {
+            return $http.get('/profile/' + viewValue).
+                success(function() {
+                    return $q.reject('name-in-use');
+                }).
+                error(ffunction() {
+                    return true;
+                });
+        }
+                            </code>
+                        </pre>
+                    </section>
+
+
+                    <section>
+                        <h2>New form coolness</h2>
+                        <p>ngMessages module</p>
+                        <pre>
+                            <code class="html" style="font-size: 18pt;">
+    <div ng-if="form.email.$error && form.email.$touched">
+        <div ng-messages="form.email.$error">
+            <div ng-message="required">
+                Please enter an email address.
+            </div>
+            <div ng-message="email">
+                Email address is invalid.
+            </div>
+        </div>
+    </div>
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>New form coolness</h2>
+                        <p>ngModelOptions</p>
+                        <ul>
+                            <li class="fragment">updateOn &lt;event-name>
+                            <li class="fragment">debounce model updates / validation
+                            <li class="fragment">opt-in for getter/setter functions
+                            <li class="fragment">opt-in for keeping invalid model values
+                        </ul>
+                        <pre class="fragment">
+                            <code class="html">
+    <form name="signup" ng-model-options="{
+        updateOn: 'blur',
+        debounce: 5000,
+        getterSetter: true,
+    }">
+    </form>
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>New form coolness</h2>
                         <iframe src="forms.html" scrolling="no"></iframe>
                     </section>
 

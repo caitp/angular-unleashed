@@ -40,4 +40,5 @@
       }
     ]
   });
+  $fullscreen.listen();
 })(this, Reveal);

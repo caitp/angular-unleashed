@@ -68,6 +68,9 @@ angular.module("todoApp", []).
     this.select = function(name) {
       self.current = $todo.select(name);
     };
+    this.editing = function() {
+      return self.newForm || self.editForm;
+    };
     this.addNew = function() {
       self.newForm = true;
       if (!self.current)

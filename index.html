@@ -43,9 +43,9 @@
                 <section>
                     <!-- INTRO -->
                     <section>
-                        <br><br>
-                        <h1>AngularJS</h1>
-                        <h3>HTML enhanced</strong> for web applications</h3>
+                        <br>
+                        <h1>Angular</h1>
+                        <h2 class="fragment" style="color: #ddd">HTML <strong>enhanced</strong> for web applications</h2>
 
                         <!--<p class="fragment">Between July 1st and August 29th:</p>
                         <ul>
@@ -57,31 +57,64 @@
                     </section>
 
                     <section>
-                        <h2>What is Angular?</h2>
-
+                        <h2>What is Angular</h2>
                         <ul>
                             <li class="fragment">Model → View
                             <li class="fragment">Declarative ≫ Imperative
                             <li class="fragment">Reusable components
-                            <li class="fragment">Focus on testable code
+                            <li class="fragment">Verifiably correct code
                         </ul>
                     </section>
 
                     <section>
-                        <h2>TodoApp V1</h2>
-                        <iframe src="todo_v1.html">
+                        <h2>What can I do with it?</h2>
+                        <iframe src="todo_v1.html"></iframe>
                     </section>
 
                     <section>
-                        <h2>What's new in 1.3?</h2>
+                        <h2>What was happening there???</h2>
+                        <ul>
+                            <li class="fragment">Single data-source for entire application
+                            <li class="fragment">Repeated content is generated from data
+                        </li>
+                    </section>
 
+                    <section>
+                        <h2>Some code:</h2>
+                        <pre>
+                            <code class="html">
+    <!-- sidebar list of lists -->
+    <nav>
+        <ul>
+            <li ng-repeat="list in todo.lists" todo-list="list">
+            </li>
+        </ul>
+    </nav>
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>But this only scratches the surface! We might want to...</h2>
+                        <ul>
+                            <li class="fragment">Sync data with remote server
+                            <li class="fragment">Client-side URL routing with history
+                            <li class="fragment">Trigger animations when data changes
+                            <li class="fragment">Sort/filter lists of data
+                            <li class="fragment">You name it!
+                        </ul><br><br>
+                        <strong class="fragment">ANGULAR WILL LET YOU DO IT O_O</strong>
+                    </section>
+
+                    <section>
+                        <h2>So what's new in 1.3?</h2>
                         <ul>
                             <li class="fragment">Significant performance improvements
-                            <li class="fragment">New debugging utilities
-                            <li class="fragment">SVG is a first-class citizen
-                            <li class="fragment">More powerful form utilities
-                            <li class="fragment">So much more!
-                        </ul>
+                            <li class="fragment">New developer tools
+                            <li class="fragment">SVG as a first-class citizen
+                            <li class="fragment">More flexible Forms APi
+                        </ul><br><br>
+                        <strong class="fragment">AND SO MUCH MORE</strong>
                     </section>
                 </section>
 

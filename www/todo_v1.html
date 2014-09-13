@@ -42,7 +42,7 @@
                 </div>
             </form>
 
-            <ul ng-if="!(todo.newForm || todo.editForm) && todo.current">
+            <ul ng-if="!todo.editing() && todo.current">
                 <li ng-repeat="item in todo.current.tasks track by $index" ng-class="{done: item.done}"
                     ng-click="item.done = !item.done" todo-task="item"
                     list="todo.current.tasks"

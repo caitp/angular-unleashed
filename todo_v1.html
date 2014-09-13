@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+    <head>
+        <script src="js/angular.js"></script>
+        <script src="js/todo_v1.js"></script>
+        <link rel="stylesheet" href="css/todo.css">
+        <link rel="stylesheet" href="third_party/font-awesome/css/font-awesome.css">
+    </head>
+    <body ng-controller="todoCtrl as todo">
+        <!-- sidebar list of lists -->
+        <nav>
+            <ul>
+                <li ng-repeat="list in todo.lists" todo-list="list"></li>
+            </ul>
+        </nav>
+
+        <!-- main list-view -->
+        <main>
+            <nav>
+                <div class="title">
+                    <h1 ng-bind="todo.current.name"></h1>
+                </div>
+                <div class="icons">
+                    <a href class="fa fa-plus fa-2x" ng-click="todo.addNew()" title="Add new item"></a>
+                </div>
+            </nav>
+
+            <form ng-if="todo.newForm || todo.editForm" name="form">
+                <div class="field">
+                    <input type="text" ng-model="todo._new.name" placeholder="Task Name">
+                </div>
+                <div class="field">
+                    <textarea ng-model="todo._new.description" placeholder="Task Description"></textarea>
+                </div>
+                <div class="icons">
+                    <a href ng-click="todo.newForm ? todo.cancelAdd() : todo.cancelEdit()"
+                       title="Cancel"
+                       class="fa fa-times fa-2x"></a>
+                    <a href ng-click="todo.newForm ? todo.finishAdd() : todo.finishEdit()"
+                       title="Save"
+                       class="fa fa-save fa-2x"></a>
+                </div>
+            </form>
+
+            <ul ng-if="!(todo.newForm || todo.editForm) && todo.current">
+                <li ng-repeat="item in todo.current.tasks track by $index" ng-class="{done: item.done}"
+                    ng-click="item.done = !item.done" todo-task="item"
+                    list="todo.current.tasks"
+                    ctrl="todo"></li>
+            </ul>
+        </main>
+    </body>
+</html>

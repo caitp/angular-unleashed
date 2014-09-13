@@ -6,7 +6,7 @@
     node.insertBefore(background, node.firstChild);
   });
   Reveal.initialize({
-    controls: false,
+    controls: true,
     progress: false,
     slideNumber: false,
     history: true,

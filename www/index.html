@@ -116,113 +116,37 @@
                         </ul><br><br>
                         <strong class="fragment">AND SO MUCH MORE</strong>
                     </section>
-                </section>
 
-                <section>
-                    <!-- Performance Tuning -->
+                    <!-- PERFORMANCE -->
                     <section>
-                        <h1>Performance</h1>
-                        <p class="fragment">Bottlenecks:</p>
+                        <h2>We made it faster!</h2>
                         <ul>
-                            <li class="fragment">Dirty-checking / Scope Events
-                            <li class="fragment">DOM manipulation causing reflows
-                            <li class="fragment">Initial compilation of markup
-                            <li class="fragment">$interpolate, $parse, jqLite, directives...
+                            <li class="fragment">DOM manipulation
+                            <li class="fragment">Expression parsing and evaluation
+                            <li class="fragment">Text interpolation
+                            <li class="fragment">Filters
+                            <li class="fragment">Bootstrapping / $compile
                         </ul>
                     </section>
 
                     <section>
-                        <h1>Performance</h1>
-                        <p>Scopes have been enhanced in a few ways</p>
-                        <ul>
-                            <li class="fragment">New ::bind-once expressions
-                            <li class="fragment">Under the hood improvements to core algorithms
-                            <li class="fragment">Shrink the data-set and spend less time churning when $digest is called.
-                        </ul>
+                        <h2>Performance Results!</h2>
+                        <p class="fragment">App startup significantly faster</p>
+                        <img class="fragment" src="assets/startup_benchmark.png">
+                        <p class="fragment">[[Largetable benchmark with interpolation]]</p>
+                        <p class="fragment">Runtime roughly 500% faster</p>
                     </section>
 
                     <section>
-                        <h1>Performance</h1>
-                        <p>Benchmarks! largetable (1000rows, 20columns interpolated)</p>
-                        <p class="fragment">~35% improved init time (vs v1.2.23)
-                        <p class="fragment">5x faster on update (vs v1.2.23)
-                        <p class="fragment">Significant (300%) less memory.
+                        <h2>Performance Results!</h2>
+                        <p>~35% improved init time (vs v1.2.23)
+                        <p>5x faster on update (vs v1.2.23)
+                        <p>Significant (300%) less memory.
                     </section>
 
+                    <!-- NEW FEATURES -->
                     <section>
-                        <h1>Performance</h1>
-                        <table>
-                            <tr>
-                                <th class="fragment" data-fragment-index="1">v1.2.23</th>
-                                <th class="fragment" data-fragment-index="2">v1.3.0-beta.19</th>
-                            </tr>
-                            <tr>
-                                <td class="fragment" data-fragment-index="1"><img src="assets/v1.2.23.png"></td>
-                                <td class="fragment" data-fragment-index="2"><img src="assets/v1.3.0-beta.19.png"></td>
-                            </tr>
-                        </table>
-                    </section>
-                </section>
-
-                <section>
-                    <!-- New features -->
-                    <section>
-                        <h1>New Features</h1>
-                        <ul>
-                            <li class="fragment">One-time binding
-                            <li class="fragment">More modern Promise implementation
-                            <li class="fragment">Support for input[type=date]
-                            <li class="fragment">Asynchonous validators
-                            <li class="fragment">SVG as a first-class citizen
-                            <li class="fragment">Long-awaited support for jQuery 2.x
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2>On-going binding</h2>
-                        <pre>
-                            <code class="html" style="font-size: 18pt;">
-    <div ng-repeat="row in rows" class="row">
-        <div ng-repeat="col in row" class="col">
-            Column {{$parent.$index}}x{{$index}}
-        </div>
-    </div>
-                            </code>
-                        </pre>
-                    </section>
-
-                    <section>
-                        <h2>On-going binding</h2>
-                        <p class="fragment">Dirty checking watches for:</p>
-                        <ul>
-                            <li class="fragment">Changes to "rows" collection as a whole
-                            <li class="fragment">Changes to each individual "row" collection
-                            <li class="fragment">Changes to each individual column value
-                        </ul><br>
-                        <strong class="fragment">**SLOW**</strong>
-                    </section>
-
-                    <section>
-                        <h2>One-time binding</h2>
-                        <pre>
-                            <code class="html" style="font-size: 18pt;">
-    // Bind-once with "::"-prefix:
-    <div ng-repeat="row in ::rows" class="row">
-        <div ng-repeat="col in ::row" class="col">
-            Column {{::$parent.$index}}x{{::$index}}
-        </div>
-    </div>
-                            </code>
-                        </pre>
-                    </section>
-
-                    <section>
-                        <h2>One-time binding</h2>
-                        <ul>
-                            <li class="fragment">Stop watching expression once value is defined.
-                            <li class="fragment">Significant load off of change detectors back
-                            <li class="fragment">Spend more time doing interesting things
-                        </ul>
+                        <h2>(Select) New Features in 1.3</h2>
                     </section>
 
                     <section>
@@ -292,8 +216,34 @@
 
                     <section>
                         <h2>SVG-tastic apps</h2>
+                        <ul>
+                            <li class="fragment">ngInclude can now SVG
+                            <li class="fragment">ngRepeat can now SVG
+                            <li class="fragment">$compiler smarter with namespaced elements
+                            <li class="fragment">Angular-D3 should get a big boost from this
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>SVG-tastic apps</h2>
                         <iframe src="svg.html" scrolling="no"></iframe>
                     </section>
+                </section>
+
+                <section>
+                    <!-- New features -->
+                    <section>
+                        <h1>New Features</h1>
+                        <ul>
+                            <li class="fragment">One-time binding
+                            <li class="fragment">More modern Promise implementation
+                            <li class="fragment">Support for input[type=date]
+                            <li class="fragment">Asynchonous validators
+                            <li class="fragment">SVG as a first-class citizen
+                            <li class="fragment">Long-awaited support for jQuery 2.x
+                        </ul>
+                    </section>
+
                 </section>
 
                 <section>

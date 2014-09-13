@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="todoApp">
     <head>
+        <script>
+        var head = document.getElementsByTagName('head')[0];
+        document.write('<base href="' + (/github\.io\/angular-unleashed/.test(window.location.href) ?
+                        '/angular-unleashed/todo_v1.html' :
+                        '/todo_v1.html') + '">');
+        </script>
         <script src="js/angular.js"></script>
         <script src="js/todo_v1.js"></script>
         <link rel="stylesheet" href="css/todo.css">

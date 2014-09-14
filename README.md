@@ -39,3 +39,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ##Third Party Components
 
 - [Reveal.js](https://github.com/hakimel/reveal.js/) ([MIT](https://github.com/hakimel/reveal.js/blob/master/LICENSE)-licensed)
+- [font-awesome](https://github.com/FortAwesome/Font-Awesome) ([SIL OFL/MIT](http://fontawesome.io/license/)-licensed)

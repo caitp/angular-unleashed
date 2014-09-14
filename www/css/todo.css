@@ -72,7 +72,7 @@ body > main > nav > .icons > a:before {
 body > main > .view {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
   clip: rect(auto auto auto auto);
 }
 

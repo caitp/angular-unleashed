@@ -23,10 +23,13 @@ body.editing {
 
 body > main {
   width: 66%;
+  height: 90vh;
   margin-left: 1em;
   border-radius: 1em;
   border: 1px solid #fff;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 body > main > nav {
@@ -66,19 +69,30 @@ body > main > nav > .icons > a:before {
   color: #000;
 }
 
-body > main > form > .icons {
+body > main > .view {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  clip: rect(auto auto auto auto);
+}
+
+body > main > .footer {
+  min-height: 1em;
+}
+
+body > main > .view > form > .icons {
   text-align: right;
 }
 
-body > main > form > .icons > a {
+body > main > .view > form > .icons > a {
   text-decoration: none;
 }
 
-body > main > form > .icons > a:before {
+body > main > .view > form > .icons > a:before {
   color: #000;
 }
 
-body > main > form > .icons > a:hover:before {
+body > main > .view > form > .icons > a:hover:before {
   -webkit-text-stroke: 1px #fff;
   -moz-text-stroke: 1px #fff;
   -ms-text-stroke: 1px #fff;

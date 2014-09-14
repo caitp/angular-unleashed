@@ -115,17 +115,65 @@ angular.module("todoApp", []).
       {
         name: "Work",
         icon: "fa-suitcase",
-        tasks: []
+        tasks: [{
+          name: 'Scooter Repair',
+          description: 'Repair the red scooter belonging to Joel Bartington for $96.00',
+          done: false
+        }, {
+          name: 'Anecdotal busy-ness',
+          description: 'Trivial tasks repeated over and over again',
+          done: false
+        }, {
+          name: 'Eternal Labour',
+          description: 'It really never ends, does it...',
+          done: false
+        }]
       },
       {
         name: "Health",
         icon: "fa-medkit",
-        tasks: []
+        tasks: [{
+          name: 'Obtain insulin refill',
+          description: 'Lantus 100u/mL penfill cartridges\nNovorapid  100u/mL penfill cartridges',
+          done: false
+        }]
       },
       {
         name: "Reading",
         icon: "fa-book",
-        tasks: []
+        tasks: [{
+          name: 'Ulysses --- James Joyce',
+          description: 'I was supposed to read this back in university, but I never did...',
+          done: false
+        }, {
+          name: 'The Story Of Language --- Mario Pei',
+          description: 'Accessible history of language and the study/understanding thereof',
+          done: true
+        }, {
+          name: 'The Eye of the World --- Robert Jordan',
+          description: 'The first in a long, relentless series of fantasy novels',
+          done: false
+        }, {
+          name: 'Quicksilver --- Neal Stephenson',
+          description: 'It\'s Neal Stephenson, how could you not read it, really?',
+          done: false
+        }, {
+          name: 'The Confusion --- Neal Stephenson',
+          description: 'It\'s Neal Stephenson, how could you not read it, really??? But after Quicksilver...',
+          done: false
+        }, {
+          name: 'The System of the World --- Neal Stephenson',
+          description: 'It\'s Neal Stephenson, how could you not read it, really??? But after The Confusion...',
+          done: false
+        }, {
+          name: 'Do Androids Dream Of Electric Sheep? --- P.K.D',
+          description: 'Plug into the Penfield and sleep away the suffering',
+          done: true
+        }, {
+          name: 'Compilers: Principles, Techniques & Tools --- A. Aho, M. Lam, R. Sethi, J. Ullman',
+          description: 'Plug into the Penfield and sleep away the suffering',
+          done: true
+        }]
       }
     ];
     var defaultListsJSON = JSON.stringify(defaultLists);

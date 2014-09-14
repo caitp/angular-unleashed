@@ -66,19 +66,19 @@ body > main > nav > .icons > a:before {
   color: #000;
 }
 
-body > main > form > .icons {
+body > main > .view > form > .icons {
   text-align: right;
 }
 
-body > main > form > .icons > a {
+body > main > .view > form > .icons > a {
   text-decoration: none;
 }
 
-body > main > form > .icons > a:before {
+body > main > .view > form > .icons > a:before {
   color: #000;
 }
 
-body > main > form > .icons > a:hover:before {
+body > main > .view > form > .icons > a:hover:before {
   -webkit-text-stroke: 1px #fff;
   -moz-text-stroke: 1px #fff;
   -ms-text-stroke: 1px #fff;

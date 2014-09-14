@@ -9,10 +9,12 @@ angular.module("todoApp", []).
         '</div>'
       ].join('\n'),
       scope: {
-        list: "=todoList"
+        list: "=todoList",
+        ctrl: '=ctrl',
       },
       link: function(scope, element, attr) {
         element.on('click', function() {
+          if (scope.ctrl.editing()) return;
           scope.$apply(function() {
             $todo.select(scope.list.name);
           });
@@ -63,43 +65,45 @@ angular.module("todoApp", []).
   }).
   controller("todoCtrl", function($scope, $todo) {
     var self = this;
+    this.taskFilter = {};
+    this.toggleTaskFilter = function() {
+      if (self.taskFilter.done === false) {
+        delete self.taskFilter.done;
+      } else {
+        self.taskFilter.done = false;
+      }
+    };
     this.lists = $todo.lists();
     this.current = this.lists[0];
     this.select = function(name) {
       self.current = $todo.select(name);
     };
     this.editing = function() {
-      return self.newForm || self.editForm;
+      return (self.newForm || self.editForm) || false;
     };
-    this.addNew = function() {
+    this.create = function() {
       self.newForm = true;
       if (!self.current)
         self.current = self.lists[0];
-    };
-    this.finishAdd = function() {
-      var current = self.current;
-      if (!current.tasks) current.tasks = [];
-      current.tasks.push(self._new);
-      $todo.save();
-      self._new = null;
-      self.newForm = false;
-    };
-    this.cancelAdd = function() {
-      self._new = null;
-      self.newForm = false;
     };
     this.edit = function(task) {
       self.editForm = true;
       self._new = task;
     };
-    this.cancelEdit = function() {
-      self._new = null;
-      self.editForm = false;
-    };
-    this.finishEdit = function() {
+    this.save = function() {
+      if (self.newForm) {
+        var current = self.current;
+        if (!current.tasks) current.tasks = [];
+        self._new.done = false;
+        current.tasks.push(self._new);
+      }
       $todo.save();
+      self.newForm = self.editForm = false;
       self._new = null;
-      self.editForm = false;
+    }
+    this.cancel = function() {
+      self.newForm = self.editForm = false;
+      self._new = null;
     };
     $scope.$on('$todo:list-changed', function(event, list) {
       self.current = list;

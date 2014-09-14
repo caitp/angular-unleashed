@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/todo.css">
         <link rel="stylesheet" href="third_party/font-awesome/css/font-awesome.css">
     </head>
-    <body ng-controller="todoCtrl as todo">
+    <body ng-controller="todoCtrl as todo" ng-class="{ editing: todo.editing() }">
         <!-- sidebar list of lists -->
         <nav>
             <ul>

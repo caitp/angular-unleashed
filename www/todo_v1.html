@@ -27,6 +27,9 @@
                     <h1 ng-bind="todo.current.name"></h1>
                 </div>
                 <div class="icons">
+                    <a href class="fa fa-2x" ng-class="todo.taskFilter.done === false ? 'fa-times-circle' : 'fa-check-circle'"
+                    ng-click="todo.toggleTaskFilter()"
+                    title="{{todo.showAllTasks ? 'Showing all tasks' : 'Showing unfinished tasks'}}"></a>
                     <a href class="fa fa-plus fa-2x" ng-click="todo.create()" title="Add new item"></a>
                 </div>
             </nav>
@@ -52,7 +55,7 @@
 
                 <!-- Viewing -->
                 <ul ng-switch-when="false">
-                    <li ng-repeat="item in todo.current.tasks track by $index" ng-class="{done: item.done}"
+                    <li ng-repeat="item in todo.current.tasks | filter:todo.taskFilter track by $index" ng-class="{done: item.done}"
                         ng-click="item.done = !item.done" todo-task="item"
                         list="todo.current.tasks"
                         ctrl="todo"></li>

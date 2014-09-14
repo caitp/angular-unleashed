@@ -65,6 +65,14 @@ angular.module("todoApp", []).
   }).
   controller("todoCtrl", function($scope, $todo) {
     var self = this;
+    this.taskFilter = {};
+    this.toggleTaskFilter = function() {
+      if (self.taskFilter.done === false) {
+        delete self.taskFilter.done;
+      } else {
+        self.taskFilter.done = false;
+      }
+    };
     this.lists = $todo.lists();
     this.current = this.lists[0];
     this.select = function(name) {
@@ -86,6 +94,7 @@ angular.module("todoApp", []).
       if (self.newForm) {
         var current = self.current;
         if (!current.tasks) current.tasks = [];
+        self._new.done = false;
         current.tasks.push(self._new);
       }
       $todo.save();

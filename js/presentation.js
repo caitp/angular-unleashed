@@ -15,6 +15,8 @@
     touch: true,
     loop: false,
     rtl: false,
+    width: 1280,
+    height: 720,
     fragments: true,
     embedded: false,
     autoSlide: 0,

@@ -73,6 +73,10 @@ angular.module("todoApp", []).
         self.taskFilter.done = false;
       }
     };
+    this.toggleTaskState = function(task) {
+      task.done = !task.done;
+      $todo.save();
+    };
     this.showingAllTasks = function() {
       return ('done' in self.taskFilter) === false;
     }

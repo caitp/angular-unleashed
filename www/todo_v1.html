@@ -56,7 +56,7 @@
                 <!-- Viewing -->
                 <ul ng-switch-when="false">
                     <li ng-repeat="item in todo.current.tasks | filter:todo.taskFilter track by $index" ng-class="{done: item.done}"
-                        ng-click="item.done = !item.done" todo-task="item"
+                        ng-click="todo.toggleTaskState(item)" todo-task="item"
                         list="todo.current.tasks"
                         ctrl="todo"></li>
                 </ul>

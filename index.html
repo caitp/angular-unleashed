@@ -174,14 +174,12 @@
                         <p>ngMessages module</p>
                         <pre>
                             <code class="html" style="font-size: 18pt;">
-    <div ng-if="form.email.$error && form.email.$touched">
-        <div ng-messages="form.email.$error">
-            <div ng-message="required">
-                Please enter an email address.
-            </div>
-            <div ng-message="email">
-                Email address is invalid.
-            </div>
+    <div ng-messages="form.email.$error">
+        <div ng-message="required">
+            Please enter an email address.
+        </div>
+        <div ng-message="email">
+            Email address is invalid.
         </div>
     </div>
                             </code>

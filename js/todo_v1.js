@@ -73,6 +73,9 @@ angular.module("todoApp", []).
         self.taskFilter.done = false;
       }
     };
+    this.showingAllTasks = function() {
+      return ('done' in self.taskFilter) === false;
+    }
     this.lists = $todo.lists();
     this.current = this.lists[0];
     this.select = function(name) {

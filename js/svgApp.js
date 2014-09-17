@@ -85,10 +85,11 @@ angular.module("svgApp", []).
     }).controller("artCtrl", function($scope, $element, $interval) {
       var self = this;
       this.strokeWidth = 1;
-      this.fillColour = "#000";
+      this.fillColour = window.top !== window.self ? "#fff" : "#000";
       this.strokeColour = "#888";
       this.nodes = 1;
       this.points = 2;
+      $element[0].style.color = window.top !== window.self ? "#fff" : "#000";
       var cachedNodes = [];
 
       function getSvgRoot() {
